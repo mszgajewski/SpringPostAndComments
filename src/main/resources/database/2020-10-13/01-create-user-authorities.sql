@@ -6,7 +6,7 @@ create table users(
     password varchar ( 100 ) not null,
     enabled boolean not null
 );
---changeset mgajewski:5
+
 create table authorities (
     username varchar ( 50 ) not null,
     authority varchar ( 50 ) not null,
@@ -14,7 +14,7 @@ create table authorities (
     users(username) ,
     UNIQUE KEY username_authority (username, authority)
 );
---changeset mgajewski:6
+
 insert into users (id, username, password, enabled)
 values (1, 'test', '{bcrypt}$2a$10$upzXFsFUOClFRR69OMKF8eajGMRs0vhcSHqvNDKy9yfW45w7o9z6O', true);
 insert into authorities (username, authority) values ('test','USER');
